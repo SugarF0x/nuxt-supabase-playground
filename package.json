@@ -6,7 +6,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "supabase:init": "mkdir .supabase && cd .supabase && supabase init",
+    "supabase:start": "cd .supabase && supabase start",
+    "supabase:stop": "cd .supabase && supabase stop"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
