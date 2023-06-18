@@ -5,14 +5,27 @@ definePageMeta({
   layout: "clear",
 })
 
-const emailField = ref('')
+const supabase = useSupabaseClient()
+
+const email = ref('')
 const password = ref('')
 const errors = reactive({ email: '', password: '' })
 
 const isLoading = ref(false)
-function submit() {
+async function submit() {
+  isLoading.value = true
 
+  const { data, error } = await supabase.auth.signInWithPassword({ email: email.value, password: password.value })
+  console.log({ data, error })
+
+  isLoading.value = false
 }
+
+const user = useSupabaseUser()
+
+watchEffect(() => {
+  if (user.value) navigateTo('/')
+})
 </script>
 
 <template>
@@ -24,7 +37,7 @@ function submit() {
 
       <form @submit.prevent="submit">
         <v-text-field
-          v-model="emailField"
+          v-model="email"
           type="mail"
           label="Почта"
           placeholder="student@mgimo.ru"

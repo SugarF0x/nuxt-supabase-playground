@@ -18,6 +18,7 @@
     "sass": "^1.63.4"
   },
   "dependencies": {
-    "@invictus.codes/nuxt-vuetify": "^0.2.20"
+    "@invictus.codes/nuxt-vuetify": "^0.2.20",
+    "@nuxtjs/supabase": "^0.3.7"
   }
 }

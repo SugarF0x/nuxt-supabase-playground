@@ -1,8 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true
+  },
   modules: [
-    '@invictus.codes/nuxt-vuetify'
+    '@invictus.codes/nuxt-vuetify',
+    '@nuxtjs/supabase'
   ],
   vuetify: {
     vuetifyOptions: {
@@ -10,5 +13,5 @@ export default defineNuxtConfig({
         defaultTheme: 'dark'
       }
     }
-  },
+  }
 })
