@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { ref, reactive } from '#imports'
-
 definePageMeta({
   layout: "clear",
+  middleware: ['auth']
 })
 
-const supabase = useSupabaseClient()
+const client = useSupabaseClient()
 
 const email = ref('')
 const password = ref('')
@@ -15,7 +14,7 @@ const isLoading = ref(false)
 async function submit() {
   isLoading.value = true
 
-  const { data, error } = await supabase.auth.signInWithPassword({ email: email.value, password: password.value })
+  const { data, error } = await client.auth.signInWithPassword({ email: email.value, password: password.value })
   console.log({ data, error })
 
   isLoading.value = false
