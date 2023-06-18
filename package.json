@@ -7,9 +7,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "supabase:init": "mkdir .supabase && cd .supabase && supabase init",
-    "supabase:start": "cd .supabase && supabase start",
-    "supabase:stop": "cd .supabase && supabase stop"
+    "supabase:init": "supabase init",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
